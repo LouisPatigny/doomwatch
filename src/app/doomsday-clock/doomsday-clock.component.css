@@ -1,0 +1,76 @@
+/* ------------------------
+   Doomsday Clock Styles
+   ------------------------ */
+
+/* Center the clock container and ensure it fills the viewport */
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);  /* Leave space for the footer */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Style the logo with responsive scaling */
+.logo {
+  width: 270px;        /* Default size for desktop */
+  height: auto;
+  margin-bottom: 40px; /* Space between the logo and the clock text */
+}
+
+/* Responsive logo size for tablets */
+@media (max-width: 768px) {
+  .logo {
+    width: 220px;      /* Adjust size for tablets */
+  }
+}
+
+/* Responsive logo size for mobile */
+@media (max-width: 480px) {
+  .logo {
+    width: 180px;      /* Adjust size for mobile devices */
+  }
+}
+
+/* ------------------------
+   Footer Icon Styles
+   ------------------------ */
+
+/* Footer Navigation in the bottom-right corner */
+.footer-nav {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Style the icons in the footer */
+.footer-icon {
+  height: auto;
+  margin: 0 10px;        /* Space between icons */
+  filter: brightness(75%);
+}
+
+/* Responsive icon size for mobile */
+@media (max-width: 480px) {
+  .footer-icon {
+    width: 40px;         /* Smaller for mobile */
+  }
+}
+
+/* Responsive icon size for tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .footer-icon {
+    width: 50px;         /* Medium size for tablets */
+  }
+}
+
+/* Larger icons for desktop (if applicable) */
+@media (min-width: 1025px) {
+  .footer-icon {
+    width: 55px;         /* Slightly larger for desktop */
+  }
+}

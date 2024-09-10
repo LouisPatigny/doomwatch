@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+
+/* Set a black background and white font for the entire app */
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+/* Ensure the app takes up the full height of the screen */
+html, body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Define responsive typography globally */
+h1 {
+  font-weight: bold;
+}
+
+/* Default font size for larger screens */
+@media (min-width: 769px) {
+  h1 {
+    font-size: 2.5rem;  /* Larger font size for desktops */
+  }
+}
+
+/* Adjust font size for tablets */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;  /* Font size for tablets */
+  }
+}
+
+/* Adjust font size for mobile */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;  /* Slightly smaller font size for mobile */
+  }
+
+  body {
+    padding: 10px;  /* Add padding on small devices */
+  }
+}
