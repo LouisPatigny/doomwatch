@@ -13,7 +13,7 @@
 
 /* Style the logo with responsive scaling */
 .logo {
-  width: 270px;
+  width: 400px;
   height: auto;
   margin-bottom: 40px;
 }
@@ -21,7 +21,7 @@
 /* Increase logo size for tablets (including iPad Mini) */
 @media (min-width: 600px) and (max-width: 1024px) {
   .logo {
-    width: 400px;
+    width: 320px;
     margin-bottom: 50px;
   }
 }
@@ -29,7 +29,7 @@
 /* Responsive logo size for mobile */
 @media (max-width: 599px) {
   .logo {
-    width: 180px;
+    width: 200px;
   }
 }
 
@@ -65,6 +65,13 @@
   }
 }
 
+/* Adjust app-name size for tablets (including iPad Mini) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .app-name {
+    font-size: 3rem;
+  }
+}
+
 /* Footer Navigation (Bottom Right) */
 .footer-nav {
   display: flex;
@@ -77,7 +84,7 @@
 .footer-icon {
   width: 65px;
   height: auto;
-  filter: brightness(75%);
+  filter: brightness(80%);
 }
 
 /* Responsive icon size for mobile */
@@ -90,7 +97,7 @@
 /* Responsive icon size for tablets */
 @media (min-width: 600px) and (max-width: 1024px) {
   .footer-icon {
-    width: 70px;
+    width: 100px;
   }
 }
 
