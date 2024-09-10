@@ -9,19 +9,18 @@ import { interval } from 'rxjs';
 })
 export class DoomsdayClockComponent implements OnInit {
   clockTime: string = '';
-  errorMessage: string = '';  // Store error message if API fails
 
   constructor(private doomsdayService: DoomsdayService) {
   }
 
   ngOnInit(): void {
-    // Call the API immediately
+    // Call the Backend at startup
     this.doomsdayService.getDoomsdayClock().subscribe(
       data => {
-        this.clockTime = data;  // Update with the fetched data
+        this.clockTime = data;
       },
       error => {
-        console.error('Full Error:', error);  // Log the full error object
+        console.error('Full Error:', error);
       }
     );
 
@@ -29,10 +28,10 @@ export class DoomsdayClockComponent implements OnInit {
     interval(300000).subscribe(() => {
       this.doomsdayService.getDoomsdayClock().subscribe(
         data => {
-          this.clockTime = data;  // Update with the fetched data
+          this.clockTime = data;
         },
         error => {
-          console.error('Full Error:', error);  // Log the full error object
+          console.error('Full Error:', error);
         }
       );
     });

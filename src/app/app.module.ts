@@ -19,7 +19,7 @@ import {NgOptimizedImage} from "@angular/common";
         NgOptimizedImage
     ],
   providers: [
-    provideHttpClient()  // Use this instead of HttpClientModule
+    provideHttpClient()  // HttpClientModule = Depreciated
   ],
   bootstrap: [AppComponent]
 })
