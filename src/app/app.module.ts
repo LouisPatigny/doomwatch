@@ -3,15 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideHttpClient } from "@angular/common/http";
-import { DoomsdayClockComponent } from './doomsday-clock/doomsday-clock.component';
-import { FormatTimePipe } from './pipes/format-time.pipe';
+import { DoomsdayClockComponent } from './features/doomsday-clock/doomsday-clock.component';
+import { FormatTimePipe } from './shared/pipes/format-time.pipe';
 import {NgOptimizedImage} from "@angular/common";
+import { DoomsdaySplashComponent } from './features/doomsday-splash/doomsday-splash.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoomsdayClockComponent,
-    FormatTimePipe
+    FormatTimePipe,
+    DoomsdaySplashComponent
   ],
     imports: [
         BrowserModule,

@@ -1,0 +1,61 @@
+/* Doomsday Clock Component-Specific Styles */
+
+/* Center the clock container */
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Styling for the clock-face in the doomsday clock */
+.doomsday-clock-text {
+  /* Modify the font size */
+  font-size: 5rem; /* Adjust as needed */
+  color: white; /* Assuming the text color is white for visibility */
+
+  /* Positioning */
+  position: absolute;
+  top: 50%; /* Adjust vertical position */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the clock */
+}
+
+/* Footer Navigation */
+.footer-nav {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+/* Style the icons in the footer */
+.footer-icon {
+  width: 65px;
+  height: auto;
+  filter: brightness(80%);
+}
+
+/* Adjust footer icon size for mobile */
+@media (max-width: 599px) {
+  .footer-icon {
+    width: 45px;
+  }
+}
+
+/* Adjust footer icon size for tablets */
+@media (min-width: 600px) {
+  .footer-icon {
+    width: 100px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .footer-icon {
+    width: 75px;
+  }
+}

@@ -1,0 +1,83 @@
+/* Splash Screen Component-Specific Styles */
+
+/* Center the splash screen content */
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;  /* Use shorthand for black */
+  position: relative;
+}
+
+/* Unified Logo styles for splash and clock */
+.logo {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 0;        /* Remove margin to avoid any interference */
+  width: 300px;            /* Default size for mobile */
+  height: auto;
+}
+
+/* Styling for the app-name in the splash screen */
+.app-name {
+  /* Modify the font size */
+  font-size: 2rem; /* Adjust as needed */
+  color: white; /* Assuming the text color is white for visibility */
+
+  /* Positioning */
+  position: absolute;
+  top: 60%; /* Adjust vertical position */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Responsive logo size for tablets */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .logo {
+    width: 320px;
+    margin-bottom: 50px;
+  }
+}
+
+/* Responsive logo size for desktops */
+@media (min-width: 1025px) {
+  .logo {
+    width: 400px;
+  }
+}
+
+/* Spinner styles */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid #fff; /* Use shorthand for white */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-top: 20px;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Spinner responsiveness */
+@media (min-width: 600px) {
+  .spinner {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .spinner {
+    width: 50px;
+    height: 50px;
+  }
+}
