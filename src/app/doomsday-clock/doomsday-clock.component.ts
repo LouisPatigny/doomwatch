@@ -27,11 +27,11 @@ export class DoomsdayClockComponent implements OnInit {
     // Continue polling the API every 5 minutes (300000 ms)
     interval(300000).subscribe(() => {
       this.doomsdayService.getDoomsdayClock().subscribe({
-        next: data => {
-          this.clockTime = data;
-        },
-        error: error => {
-          console.error('Full Error:', error);
+          next: data => {
+            this.clockTime = data;
+          },
+          error: error => {
+            console.error('Full Error:', error);
           }
         }
       );
