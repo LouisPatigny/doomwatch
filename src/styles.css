@@ -1,13 +1,14 @@
-/* Global Styles */
+/* Global Styles - Mobile-first Approach */
 
 /* Set a black background and white font for the entire app */
 body {
   background-color: black;
   color: white;
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
   overflow: hidden;  /* Hide any potential scrollbars */
+  padding: 10px;  /* Default padding for mobile */
 }
 
 /* Ensure the app takes up the full height of the screen */
@@ -19,50 +20,55 @@ html, body {
 /* Define responsive typography globally */
 h1 {
   font-weight: bold;
-  font-size: 1.5rem; /* Default font size for mobile */
+  font-size: 1.5rem; /* Mobile-first: default font size for mobile */
 }
 
-/* Adjust font size for tablets and desktops */
-@media (min-width: 768px) {
-  h1 {
-    font-size: 3rem;  /* Increased font size for tablets */
-  }
+.app-name {
+  font-family: 'Bahnschrift', sans-serif;
 }
 
-@media (min-width: 1025px) {
-  h1 {
-    font-size: 2.5rem;  /* Larger font size for desktops */
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    padding: 10px;  /* Add padding on small devices */
-  }
-}
-
-/* Unified Logo styles for splash and clock */
+/* Shared Logo Styles (Mobile-first) */
 .logo {
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-bottom: 0;
-  width: 300px;     /* Default width for mobile */
+  width: 200px;     /* Default width for mobile */
   height: auto;
 }
 
-/* Responsive logo size for tablets */
-@media (min-width: 600px) and (max-width: 1024px) {
+/* Adjust logo size for tablets */
+@media (min-width: 768px) {
   .logo {
-    width: 320px;
-    margin-bottom: 50px;
+    width: 400px;
   }
 }
 
-/* Responsive logo size for desktops */
-@media (min-width: 1025px) {
-  .logo {
-    width: 400px;
+/* Adjust font size for tablets */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;  /* Larger font size for tablets */
+  }
+}
+
+/* Animations */
+
+/* Growing from 50% to 100% */
+@keyframes grow {
+  0% {
+    transform: translate(-50%, -50%) scale(0.40);  /* Start small (40%) */
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);  /* Grow to full size (100%) */
+  }
+}
+
+/* Fade in from 0 to 100% opacity */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

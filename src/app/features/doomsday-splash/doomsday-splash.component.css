@@ -1,4 +1,4 @@
-/* Splash Screen Component-Specific Styles */
+/* Splash Screen Component-Specific Styles - Mobile-first */
 
 /* Center the splash screen content */
 .splash-container {
@@ -7,77 +7,57 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #000;  /* Use shorthand for black */
+  background-color: black;
   position: relative;
+  gap: 20px; /* Adjust the gap as needed */
 }
 
-/* Unified Logo styles for splash and clock */
+/* Logo with growing animation */
 .logo {
   position: absolute;
   top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  margin-bottom: 0;        /* Remove margin to avoid any interference */
-  width: 300px;            /* Default size for mobile */
+  transform: translate(-50%, -50%) scale(0.5);  /* Start at 50% size */
+  width: 200px;  /* Mobile-first default size */
   height: auto;
+  animation: grow 600ms ease-out forwards;  /* Growing animation */
 }
 
-/* Styling for the app-name in the splash screen */
+/* App name positioned below the logo */
 .app-name {
-  /* Modify the font size */
-  font-size: 2rem; /* Adjust as needed */
-  color: white; /* Assuming the text color is white for visibility */
-
-  /* Positioning */
-  position: absolute;
-  top: 60%; /* Adjust vertical position */
-  left: 50%;
-  transform: translate(-50%, -50%);
+  font-size: 3rem;  /* Mobile-first default size */
+  color: white;
+  margin-top: 100px;
+  animation: fadeIn 600ms;
 }
 
-/* Responsive logo size for tablets */
-@media (min-width: 600px) and (max-width: 1024px) {
-  .logo {
-    width: 320px;
-    margin-bottom: 50px;
-  }
-}
-
-/* Responsive logo size for desktops */
-@media (min-width: 1025px) {
-  .logo {
-    width: 400px;
-  }
-}
-
-/* Spinner styles */
+/* Spinner styles for loading */
 .spinner {
   width: 50px;
   height: 50px;
   border: 5px solid rgba(255, 255, 255, 0.3);
-  border-top: 5px solid #fff; /* Use shorthand for white */
+  border-top: 5px solid white;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-top: 20px;
+  animation: spin 1s linear infinite, fadeIn 600ms;
 }
+
+/* Responsive styles for tablets */
+@media (min-width: 768px) {
+  .app-name {
+    font-size: 5rem;
+    margin-top: 300px;
+  }
+
+  .spinner {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Animations */
 
 /* Spinner animation */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-/* Spinner responsiveness */
-@media (min-width: 600px) {
-  .spinner {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-@media (min-width: 1025px) {
-  .spinner {
-    width: 50px;
-    height: 50px;
-  }
 }
