@@ -7,6 +7,7 @@ import {DoomsdayClockResolver} from "./core/resolvers/doomsday-clock.resolver";
 const routes: Routes = [
   { path: '', component: DoomsdaySplashComponent },
   { path: 'clock', component: DoomsdayClockComponent, resolve: { clockData: DoomsdayClockResolver } },
+  { path: 'history', loadChildren: () => import('./features/history/history.module').then(m => m.HistoryModule) },
 ];
 
 @NgModule({
