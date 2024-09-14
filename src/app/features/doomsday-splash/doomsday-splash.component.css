@@ -42,7 +42,7 @@
 }
 
 /* Responsive styles for tablets */
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .app-name {
     font-size: 5rem;
     margin-top: 300px;
@@ -51,6 +51,10 @@
   .spinner {
     width: 80px;
     height: 80px;
+  }
+
+  .logo {
+    width: 400px;
   }
 }
 

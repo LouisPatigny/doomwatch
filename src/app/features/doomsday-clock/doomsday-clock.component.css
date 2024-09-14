@@ -23,7 +23,7 @@
 }
 
 /* Responsive clock size for tablets */
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .doomsday-clock-text {
     font-size: 8rem;
   }

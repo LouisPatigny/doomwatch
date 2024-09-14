@@ -1,0 +1,104 @@
+/* Root container for the entire screen */
+.history-timeline-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  font-family: 'Bahnschrift', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container for year and navigation */
+.year-navigation-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+/* Year display */
+.year-display {
+  font-size: 6rem;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Navigation arrows */
+.navigation-arrow {
+  cursor: pointer;
+  width: 40px;
+  height: auto;
+}
+
+/* Left arrow positioning */
+.navigation-arrow.left {
+  position: absolute;
+  left: 20px;
+}
+
+/* Right arrow positioning */
+.navigation-arrow.right {
+  position: absolute;
+  right: 20px;
+}
+
+/* Close button */
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 60px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Timeline container */
+.history-timeline-container {
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Midnight description */
+.midnight-time {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Event description */
+.description {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 600px;
+  margin: 10px 0;
+}
+
+/* Adjustments for tablets */
+@media (min-width: 600px) {
+  .year-display {
+    font-size: 9rem;
+  }
+
+  .midnight-time {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 2rem;
+  }
+
+  .navigation-arrow {
+    width: 50px;
+  }
+
+  .close-icon {
+    width: 80px;
+  }
+}

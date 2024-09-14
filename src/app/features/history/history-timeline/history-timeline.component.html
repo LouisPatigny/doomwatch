@@ -1,1 +1,29 @@
-<p>history-timeline works!</p>
+<div class="history-timeline-wrapper">
+  <!-- Close button -->
+  <img src="/images/noun-cross.png" alt="Close" class="close-icon" (click)="closeTimeline()">
+
+  <!-- Timeline container for the sliding effect -->
+  <div class="history-timeline-container">
+    @if (currentEvent) {
+      <!-- Container for Year and navigation arrows -->
+      <div class="year-navigation-wrapper">
+        <!-- Left arrow (only if previous event exists) -->
+        @if (hasPreviousEvent) {
+          <img src="/images/noun-arrow-left.png" alt="Previous" class="navigation-arrow left" (click)="previousEvent()">
+        }
+        <!-- Year display -->
+        <h1 class="year-display">{{ currentEvent.year }}</h1>
+        <!-- Right arrow (only if next event exists) -->
+        @if (hasNextEvent) {
+          <img src="/images/noun-arrow-right.png" alt="Next" class="navigation-arrow right" (click)="nextEvent()">
+        }
+      </div>
+
+      <!-- Minutes to midnight -->
+      <p class="midnight-time">{{ currentEvent.time }}</p>
+
+      <!-- Description of the current event -->
+      <p class="description">{{ currentEvent.description }}</p>
+    }
+  </div>
+</div>
