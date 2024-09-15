@@ -12,6 +12,41 @@
   overflow: hidden;
 }
 
+/* Container for the dropdown and close button */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+/* Styling for the dropdown */
+.year-dropdown {
+  width: 300px;
+  font-size: 20px;
+  border: none;
+  background-color: black;
+  color: white;
+  overflow-y: auto;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.year-dropdown option {
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
+.year-dropdown:focus {
+  outline: none;
+  border-color: #666;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
 /* Container for year and navigation */
 .year-navigation-wrapper {
   display: flex;
@@ -19,6 +54,7 @@
   justify-content: center;
   position: relative;
   width: 100%;
+  margin-top: 50px; /* Adjusted for dropdown and close button */
 }
 
 /* Year display */
@@ -48,20 +84,11 @@
   right: 20px;
 }
 
-/* Close button */
-.close-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 60px;
-  height: auto;
-  cursor: pointer;
-}
-
 /* Timeline container */
 .history-timeline-container {
   text-align: center;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 /* Midnight description */

@@ -9,6 +9,7 @@ body {
   text-align: center;
   overflow: hidden;  /* Hide any potential scrollbars */
   padding: 10px;  /* Default padding for mobile */
+  touch-action: none; /* Disable browser back/forward navigation on swipe */
 }
 
 /* Ensure the app takes up the full height of the screen */
@@ -35,6 +36,16 @@ h1 {
   transform: translate(-50%, -50%);
   width: 200px;     /* Default width for mobile */
   height: auto;
+}
+
+/* Close button */
+.close-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 50px;
+  height: auto;
+  cursor: pointer;
 }
 
 /* Adjust logo size for tablets */

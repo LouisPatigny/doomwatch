@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DoomsdayHistoryService } from '../../../core/services/history-timeline.service';
 import { ClockEvent } from "./models/clock-event.model";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-history-timeline',
@@ -11,15 +12,55 @@ export class HistoryTimelineComponent implements OnInit {
   clockEvents: ClockEvent[] = [];  // All events
   currentIndex: number = 0;  // Track the current event
   isTransitioning: boolean = false;  // Track if we are in the middle of an animation
+  availableYears: { year: number, time: string }[] = [];  // Available years for the dropdown
 
-  constructor(private historyService: DoomsdayHistoryService) {}
+  private touchStartX: number = 0;  // Track the starting X position of a touch
+  private touchEndX: number = 0;    // Track the ending X position of a touch
+  private swipeThreshold: number = 50;  // Minimum distance for a swipe
+
+  constructor(
+    private historyService: DoomsdayHistoryService,
+    private router: Router,
+    ) {}
 
   ngOnInit(): void {
     // Fetch the history events from the service
     this.historyService.getDoomsdayHistory().subscribe((data: ClockEvent[]) => {
       this.clockEvents = data;
       this.currentIndex = 0;  // Start at the first event
+      this.populateAvailableYears();  // Populate the dropdown with available years
     });
+  }
+
+  // Populate the dropdown with relevant years
+  private populateAvailableYears(): void {
+    this.availableYears = this.clockEvents.map(event => ({
+      year: event.year,
+      time: event.time
+    }));
+  }
+
+// Handle selection from the dropdown
+  onYearSelected(event: Event): void {
+    const selectedYear = (event.target as HTMLSelectElement).value;
+    const year = parseInt(selectedYear, 10); // Convert the string value to a number
+    const index = this.clockEvents.findIndex(event => event.year === year);
+    if (index !== -1) {
+      this.jumpToEvent(index);  // Jump to the selected event
+    }
+  }
+
+  // Jump to a specific event based on index
+  private jumpToEvent(index: number): void {
+    if (index !== this.currentIndex && !this.isTransitioning) {
+      const direction = index > this.currentIndex ? 'next' : 'previous';
+      this.currentIndex = index;
+      const outClass = direction === 'next' ? 'slide-out-left' : 'slide-out-right';
+      const inClass = direction === 'next' ? 'slide-in-right' : 'slide-in-left';
+      this.triggerAnimation(outClass, inClass, () => {
+        this.isTransitioning = false;
+      });
+    }
   }
 
   // Method to get the current event
@@ -29,25 +70,15 @@ export class HistoryTimelineComponent implements OnInit {
 
   // Navigate to the next event (if available)
   nextEvent(): void {
-    if (this.isTransitioning) return;  // Prevent double-click during animation
-    if (this.currentIndex < this.clockEvents.length - 1) {
-      this.isTransitioning = true;
-      this.applyAnimation('slide-out-left', 'slide-in-right', () => {
-        this.currentIndex++;
-        this.isTransitioning = false;
-      });
+    if (!this.isTransitioning && this.hasNextEvent) {
+      this.triggerAnimation('slide-out-left', 'slide-in-right', () => this.currentIndex++);
     }
   }
 
   // Navigate to the previous event (if available)
   previousEvent(): void {
-    if (this.isTransitioning) return;  // Prevent double-click during animation
-    if (this.currentIndex > 0) {
-      this.isTransitioning = true;
-      this.applyAnimation('slide-out-right', 'slide-in-left', () => {
-        this.currentIndex--;
-        this.isTransitioning = false;
-      });
+    if (!this.isTransitioning && this.hasPreviousEvent) {
+      this.triggerAnimation('slide-out-right', 'slide-in-left', () => this.currentIndex--);
     }
   }
 
@@ -62,24 +93,48 @@ export class HistoryTimelineComponent implements OnInit {
   }
 
   // Apply animations when transitioning between events
-  applyAnimation(outClass: string, inClass: string, callback: () => void): void {
+  private triggerAnimation(outClass: string, inClass: string, updateIndex: () => void): void {
+    this.isTransitioning = true;
     const container = document.querySelector('.history-timeline-container');
     if (container) {
       container.classList.add(outClass);
       setTimeout(() => {
-        callback();  // Call the callback to update the event
+        updateIndex();
         container.classList.remove(outClass);
         container.classList.add(inClass);
         setTimeout(() => {
           container.classList.remove(inClass);
-        }, 300);  // Match the CSS animation duration
-      }, 300);  // Match the CSS animation duration
+          this.isTransitioning = false;
+        }, 300);
+      }, 300);
+    }
+  }
+
+  // Detecting and handling swipe gestures
+  onTouchStart(event: TouchEvent): void {
+    this.touchStartX = event.changedTouches[0].screenX;
+  }
+
+  onTouchEnd(event: TouchEvent): void {
+    this.touchEndX = event.changedTouches[0].screenX;
+    this.handleSwipeGesture();
+  }
+
+  private handleSwipeGesture(): void {
+    const swipeDistance = this.touchEndX - this.touchStartX;
+    if (Math.abs(swipeDistance) > this.swipeThreshold) {
+      if (swipeDistance < 0 && this.hasNextEvent) {
+        this.nextEvent();  // Swipe left to go to the next event
+      } else if (swipeDistance > 0 && this.hasPreviousEvent) {
+        this.previousEvent();  // Swipe right to go to the previous event
+      }
     }
   }
 
   // Close the timeline (you can define this functionality later)
   closeTimeline(): void {
-    console.log('Closing the timeline');
-    // Logic to close or navigate away from the timeline view
+    this.router.navigate(['/clock']).then(() => {
+      console.log('Closing the timeline');
+    });
   }
 }

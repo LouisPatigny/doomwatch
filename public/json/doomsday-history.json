@@ -2,175 +2,146 @@
   {
     "year": 1947,
     "time": "7 minutes to midnight",
-    "unformattedTime": "7 minutes",
     "description": "The Doomsday Clock is introduced, set at 7 minutes to midnight, symbolizing the looming threat of nuclear war."
   },
   {
     "year": 1949,
     "time": "3 minutes to midnight",
-    "unformattedTime": "3 minutes",
     "description": "The Soviet Union tests its first atomic bomb, escalating the nuclear arms race."
   },
   {
     "year": 1953,
     "time": "2 minutes to midnight",
-    "unformattedTime": "2 minutes",
     "description": "Both the U.S. and the Soviet Union test thermonuclear devices within months, intensifying global tensions."
   },
   {
     "year": 1960,
     "time": "7 minutes to midnight",
-    "unformattedTime": "7 minutes",
     "description": "Global awareness of nuclear risks grows, leading to initial disarmament talks."
   },
   {
     "year": 1963,
     "time": "12 minutes to midnight",
-    "unformattedTime": "12 minutes",
     "description": "The Partial Test Ban Treaty is signed, prohibiting atmospheric nuclear tests."
   },
   {
     "year": 1968,
     "time": "7 minutes to midnight",
-    "unformattedTime": "7 minutes",
     "description": "France and China develop nuclear weapons; proliferation concerns increase."
   },
   {
     "year": 1969,
     "time": "10 minutes to midnight",
-    "unformattedTime": "10 minutes",
     "description": "The Nuclear Non-Proliferation Treaty comes into effect, aiming to prevent the spread of nuclear weapons."
   },
   {
     "year": 1972,
     "time": "12 minutes to midnight",
-    "unformattedTime": "12 minutes",
     "description": "The U.S. and the Soviet Union sign the Strategic Arms Limitation Treaty (SALT I)."
   },
   {
     "year": 1974,
     "time": "9 minutes to midnight",
-    "unformattedTime": "9 minutes",
     "description": "India conducts its first nuclear test; superpower relations become strained."
   },
   {
     "year": 1980,
     "time": "7 minutes to midnight",
-    "unformattedTime": "7 minutes",
     "description": "The Soviet invasion of Afghanistan heightens Cold War tensions."
   },
   {
     "year": 1981,
     "time": "4 minutes to midnight",
-    "unformattedTime": "4 minutes",
     "description": "Escalation of the arms race with the deployment of new U.S. and Soviet missiles."
   },
   {
     "year": 1984,
     "time": "3 minutes to midnight",
-    "unformattedTime": "3 minutes",
     "description": "Communication between superpowers breaks down; nuclear war fears increase."
   },
   {
     "year": 1988,
     "time": "6 minutes to midnight",
-    "unformattedTime": "6 minutes",
     "description": "The U.S. and Soviet Union sign the Intermediate-Range Nuclear Forces Treaty."
   },
   {
     "year": 1990,
     "time": "10 minutes to midnight",
-    "unformattedTime": "10 minutes",
     "description": "The Cold War begins to end with the fall of the Berlin Wall and improved U.S.-Soviet relations."
   },
   {
     "year": 1991,
     "time": "17 minutes to midnight",
-    "unformattedTime": "17 minutes",
     "description": "The dissolution of the Soviet Union reduces the nuclear threat significantly."
   },
   {
     "year": 1995,
     "time": "14 minutes to midnight",
-    "unformattedTime": "14 minutes",
     "description": "Concerns over nuclear proliferation rise due to stalled disarmament efforts."
   },
   {
     "year": 1998,
     "time": "9 minutes to midnight",
-    "unformattedTime": "9 minutes",
     "description": "India and Pakistan conduct nuclear tests, increasing regional tensions."
   },
   {
     "year": 2002,
     "time": "7 minutes to midnight",
-    "unformattedTime": "7 minutes",
     "description": "Withdrawal from arms control treaties and the threat of terrorism raise nuclear risks."
   },
   {
     "year": 2007,
     "time": "5 minutes to midnight",
-    "unformattedTime": "5 minutes",
     "description": "Climate change is added as a significant global threat alongside nuclear proliferation."
   },
   {
     "year": 2010,
     "time": "6 minutes to midnight",
-    "unformattedTime": "6 minutes",
     "description": "Global efforts to reduce nuclear arsenals and address climate change show progress."
   },
   {
     "year": 2012,
     "time": "5 minutes to midnight",
-    "unformattedTime": "5 minutes",
     "description": "Insufficient action on nuclear disarmament and climate change leads to increased risk."
   },
   {
     "year": 2015,
     "time": "3 minutes to midnight",
-    "unformattedTime": "3 minutes",
     "description": "Failure to address climate change and modernization of nuclear weapons heighten dangers."
   },
   {
     "year": 2017,
     "time": "2.5 minutes to midnight",
-    "unformattedTime": "2.5 minutes",
     "description": "Rising nationalism and nuclear rhetoric contribute to global instability."
   },
   {
     "year": 2018,
     "time": "2 minutes to midnight",
-    "unformattedTime": "2 minutes",
     "description": "The Bulletin sets the clock the closest to midnight since 1953 due to multiple threats."
   },
   {
     "year": 2019,
     "time": "2 minutes to midnight",
-    "unformattedTime": "2 minutes",
     "description": "Nuclear risks and inaction on climate change keep the clock at 2 minutes to midnight."
   },
   {
     "year": 2020,
     "time": "100 seconds to midnight",
-    "unformattedTime": "100 seconds",
     "description": "The clock moves closer, reflecting increased nuclear risks and inadequate climate action."
   },
   {
     "year": 2021,
     "time": "100 seconds to midnight",
-    "unformattedTime": "100 seconds",
     "description": "Pandemic, disinformation, and lack of progress on global threats maintain the time."
   },
   {
     "year": 2022,
     "time": "100 seconds to midnight",
-    "unformattedTime": "100 seconds",
     "description": "Ongoing threats including COVID-19 and climate change keep the clock at its closest point."
   },
   {
     "year": 2023,
     "time": "90 seconds to midnight",
-    "unformattedTime": "90 seconds",
     "description": "The clock is set at 90 seconds to midnight, the closest ever, citing the war in Ukraine and escalating global tensions."
   }
 ]
