@@ -7,6 +7,7 @@ import { DoomsdayClockComponent } from './features/doomsday-clock/doomsday-clock
 import { FormatTimePipe } from './shared/pipes/format-time.pipe';
 import { NgOptimizedImage } from "@angular/common";
 import { DoomsdaySplashComponent } from './features/doomsday-splash/doomsday-splash.component';
+import { AboutComponent } from './features/about/about.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { DoomsdaySplashComponent } from './features/doomsday-splash/doomsday-spl
     DoomsdayClockComponent,
     FormatTimePipe,
     DoomsdaySplashComponent,
+    AboutComponent,
   ],
     imports: [
         BrowserModule,

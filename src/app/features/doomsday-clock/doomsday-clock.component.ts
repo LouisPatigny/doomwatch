@@ -45,4 +45,12 @@ export class DoomsdayClockComponent implements OnInit {
       (error) => console.error('Failed to navigate to history:', error)
     );
   }
+
+  // Method to navigate to the history timeline
+  openAbout(): void {
+    this.router.navigate(['/about']).then(
+      () => console.log('Navigated to the history timeline'),
+      (error) => console.error('Failed to navigate to history:', error)
+    );
+  }
 }

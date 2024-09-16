@@ -1,7 +1,7 @@
 <div class="clock-container">
   <div class="logo-container">
     <!-- App Logo -->
-    <img src="/images/app-icon.png" alt="Doomwatch Logo" class="logo">
+    <img src="/images/icons/app-icon.png" alt="Doomwatch Logo" class="logo">
   </div>
   <h1 class="doomsday-clock-text">{{ clockTime | formatTime }}</h1>
 </div>
@@ -10,9 +10,10 @@
 <div class="footer-container">
   <!-- Settings and About Icons (Bottom Right) -->
   <div class="footer-nav">
-    <img src="/images/setting-icon-0.png" alt="Settings" class="footer-icon">
-    <img src="/images/about-icon-0.png" alt="About" class="footer-icon">
-    <!-- Calendar icon to open the history timeline -->
-    <img src="/images/calendar-icon.png" alt="Timeline" class="footer-icon" (click)="openTimeline()">
+    <img src="/images/icons/setting-icon-0.png" alt="Settings" class="footer-icon">
+    <!-- Info icon to open the 'About' page -->
+    <img src="/images/icons/about-icon-0.png" alt="About" class="footer-icon" (click)="openAbout()">
+    <!-- Calendar icon to open the 'history timeline' page -->
+    <img src="/images/icons/calendar-icon.png" alt="Timeline" class="footer-icon" (click)="openTimeline()">
   </div>
 </div>
