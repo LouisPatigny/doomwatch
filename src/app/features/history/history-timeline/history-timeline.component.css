@@ -3,7 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 100px;
   height: 100vh;
   background-color: black;
   color: white;
@@ -15,7 +16,7 @@
 /* Logo with growing animation */
 .logo {
   position: absolute;
-  top: 85%;
+  top: 78%;
   left: 50%;
   width: 100px;  /* Mobile-first default size */
   height: auto;
@@ -81,17 +82,17 @@
 /* Midnight description */
 .midnight-time {
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   text-align: center;
 }
 
 /* Event description */
 .description {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-align: left;
-  padding: 0 20px;
+  padding: 0 20px 0 20px;
   margin: 10px 0;
-  line-height: 40px;
+  line-height: 36px;
 }
 
 /* Adjustments for tablets */
@@ -106,10 +107,12 @@
 
   .midnight-time {
     font-size: 3rem;
+    margin-bottom: 75px;
   }
 
   .description {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    line-height: 50px;
   }
 
   .navigation-arrow {

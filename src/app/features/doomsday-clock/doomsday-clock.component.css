@@ -42,6 +42,13 @@
   transform : translateX(-3%); /* Necessary to fix the positioning of the icons */
 }
 
+/* Responsive clock size for tablets */
+@media (min-width: 600px) {
+  .footer-nav {
+    padding-bottom: 20px;
+  }
+}
+
 /* Style the icons in the footer */
 .footer-icon {
   width: 65px;
