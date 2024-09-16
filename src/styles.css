@@ -49,14 +49,10 @@ h1 {
 }
 
 /* Adjust logo size for tablets */
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .logo {
-    width: 400px;
+    width: 350px;
   }
-}
-
-/* Adjust font size for tablets */
-@media (min-width: 768px) {
   h1 {
     font-size: 3rem;  /* Larger font size for tablets */
   }
@@ -71,6 +67,19 @@ h1 {
   }
   100% {
     transform: translate(-50%, -50%) scale(1);  /* Grow to full size (100%) */
+  }
+}
+
+/* Growing from 50% to 100% */
+@keyframes breath {
+  0% {
+    transform: translate(-50%, -50%) scale(0.90);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.90);
   }
 }
 

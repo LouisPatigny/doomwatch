@@ -1,22 +1,17 @@
-<div class="history-timeline-wrapper">
-  <!-- Dropdown for fast navigation by year -->
+<div class="history-timeline-wrapper"
+     (touchstart)="onTouchStart($event)"
+     (touchend)="onTouchEnd($event)">
   <div class="header-container">
-    <select class="year-dropdown" (change)="onYearSelected($event)">
-      @for (year of availableYears; track year.year) {
-        <option [value]="year.year">
-          {{ year.year }} - {{ year.time }}
-        </option>
-      }
-    </select>
-
     <!-- Close button -->
     <img src="/images/noun-cross.png" alt="Close" class="close-icon" (click)="closeTimeline()">
+    <!-- Page Title -->
+    <h1 class="page-title">Discover the history of the clock.</h1>
+    <!-- App Logo -->
+    <img src="/images/app-icon.png" alt="Doomwatch Logo" class="logo">
   </div>
 
   <!-- Timeline container for the sliding effect -->
-  <div class="history-timeline-container"
-       (touchstart)="onTouchStart($event)"
-       (touchend)="onTouchEnd($event)">
+  <div class="history-timeline-container">
     @if (currentEvent) {
       <!-- Container for Year and navigation arrows -->
       <div class="year-navigation-wrapper">

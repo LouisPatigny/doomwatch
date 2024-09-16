@@ -12,7 +12,6 @@ export class HistoryTimelineComponent implements OnInit {
   clockEvents: ClockEvent[] = [];  // All events
   currentIndex: number = 0;  // Track the current event
   isTransitioning: boolean = false;  // Track if we are in the middle of an animation
-  availableYears: { year: number, time: string }[] = [];  // Available years for the dropdown
 
   private touchStartX: number = 0;  // Track the starting X position of a touch
   private touchEndX: number = 0;    // Track the ending X position of a touch
@@ -28,39 +27,7 @@ export class HistoryTimelineComponent implements OnInit {
     this.historyService.getDoomsdayHistory().subscribe((data: ClockEvent[]) => {
       this.clockEvents = data;
       this.currentIndex = 0;  // Start at the first event
-      this.populateAvailableYears();  // Populate the dropdown with available years
     });
-  }
-
-  // Populate the dropdown with relevant years
-  private populateAvailableYears(): void {
-    this.availableYears = this.clockEvents.map(event => ({
-      year: event.year,
-      time: event.time
-    }));
-  }
-
-// Handle selection from the dropdown
-  onYearSelected(event: Event): void {
-    const selectedYear = (event.target as HTMLSelectElement).value;
-    const year = parseInt(selectedYear, 10); // Convert the string value to a number
-    const index = this.clockEvents.findIndex(event => event.year === year);
-    if (index !== -1) {
-      this.jumpToEvent(index);  // Jump to the selected event
-    }
-  }
-
-  // Jump to a specific event based on index
-  private jumpToEvent(index: number): void {
-    if (index !== this.currentIndex && !this.isTransitioning) {
-      const direction = index > this.currentIndex ? 'next' : 'previous';
-      this.currentIndex = index;
-      const outClass = direction === 'next' ? 'slide-out-left' : 'slide-out-right';
-      const inClass = direction === 'next' ? 'slide-in-right' : 'slide-in-left';
-      this.triggerAnimation(outClass, inClass, () => {
-        this.isTransitioning = false;
-      });
-    }
   }
 
   // Method to get the current event

@@ -12,39 +12,26 @@
   overflow: hidden;
 }
 
-/* Container for the dropdown and close button */
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+/* Logo with growing animation */
+.logo {
   position: absolute;
-  top: 0;
+  top: 85%;
+  left: 50%;
+  width: 100px;  /* Mobile-first default size */
+  height: auto;
+  animation: breath 5s linear infinite, fadeIn 600ms;
+}
+
+.page-title {
+  position: absolute;
+  font-size: 1.4rem;
+  width: 100%;
+  top: -10px;
+  left: 43%;
+  transform: translateX(-50%);
   z-index: 10;
-}
-
-/* Styling for the dropdown */
-.year-dropdown {
-  width: 300px;
-  font-size: 20px;
-  border: none;
-  background-color: black;
-  color: white;
-  overflow-y: auto;
-  margin-top: 20px;
-  margin-left: 10px;
-}
-
-.year-dropdown option {
-  padding: 5px;
-  background-color: black;
-  color: white;
-}
-
-.year-dropdown:focus {
-  outline: none;
-  border-color: #666;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  line-height: 50px;
+  font-family: 'Bahnschrift', sans-serif;
 }
 
 /* Container for year and navigation */
@@ -88,7 +75,7 @@
 .history-timeline-container {
   text-align: center;
   overflow: hidden;
-  margin-top: 20px;
+  margin-bottom: 200px;
 }
 
 /* Midnight description */
@@ -100,17 +87,21 @@
 
 /* Event description */
 .description {
-  font-size: 1.2rem;
-  text-align: center;
+  font-size: 1.4rem;
+  text-align: left;
   padding: 0 20px;
-  max-width: 600px;
   margin: 10px 0;
+  line-height: 40px;
 }
 
 /* Adjustments for tablets */
 @media (min-width: 600px) {
   .year-display {
     font-size: 9rem;
+  }
+
+  .logo {
+    width: 150px;
   }
 
   .midnight-time {
@@ -126,6 +117,11 @@
   }
 
   .close-icon {
-    width: 80px;
+    width: 100px;
+  }
+
+  .page-title {
+    font-size: 2.8rem;
+    top: 2px;
   }
 }
