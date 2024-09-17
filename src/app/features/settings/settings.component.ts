@@ -11,10 +11,10 @@ export class SettingsComponent implements OnInit {
   // Settings properties with default values
   notificationsEnabled: boolean = true;
   midnightAlarmEnabled: boolean = true;
-  selectedAlarmSound: string = 'default';  // Default sound set here
+  selectedAlarmSound: string = 'Audio1';  // Default sound set here
 
   // Predefined alarm sounds
-  alarmSounds: string[] = ['cyberpunk', 'marsattack', 'soleilgris'];
+  alarmSounds: string[] = ['Audio1', 'Audio2', 'Audio3'];
 
   // Variable to keep track of the currently playing audio
   private currentAudio: HTMLAudioElement | null = null;
@@ -28,7 +28,7 @@ export class SettingsComponent implements OnInit {
     this.loadSettings();
     // If no selected sound, set it to default
     if (!this.selectedAlarmSound) {
-      this.selectedAlarmSound = 'cyberpunk';
+      this.selectedAlarmSound = 'Audio1';
       this.saveSettings();  // Ensure default is saved
     }
   }
@@ -73,7 +73,7 @@ export class SettingsComponent implements OnInit {
     }
 
     // Create a new Audio object for the clicked sound
-    this.currentAudio = new Audio(`/sounds/${sound}.wav`);
+    this.currentAudio = new Audio(`/sounds/${sound}.mp3`);
     this.currentAudio.play().then(() => {
       console.log(`Playing preview sound: ${sound}`);
     }).catch(error => {
