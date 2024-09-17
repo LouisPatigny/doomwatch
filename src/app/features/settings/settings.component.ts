@@ -58,7 +58,7 @@ export class SettingsComponent implements OnInit {
 
   // Method to play or pause the audio preview, handling the logic for only one sound playing at a time
   playPreview(sound: string): void {
-    // If an audio is currently playing and it's the same sound, pause it
+    // If an audio is currently playing, and it's the same sound, pause it
     if (this.currentAudio && this.currentAudio.src.includes(sound)) {
       if (!this.currentAudio.paused) {
         this.currentAudio.pause();
