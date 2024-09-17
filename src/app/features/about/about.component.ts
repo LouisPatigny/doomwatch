@@ -14,10 +14,13 @@ export class AboutComponent {
   )
   {}
 
-  // Close the timeline (you can define this functionality later)
+// Close the 'about' page and navigate back to the 'clock' page
   closeAbout(): void {
-    this.router.navigate(['/clock']).then(() => {
-      console.log('Closing the timeline');
+    this.router.navigate(['/clock'], {
+      state: { cached: true },  // Preserving state by marking it as cached
+      replaceUrl: true,         // Replace the current URL to avoid adding to history
+    }).then(() => {
+      console.log('Closing \"About\" and navigating to the clock page');
     });
   }
 }

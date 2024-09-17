@@ -3,7 +3,7 @@
      (touchend)="onTouchEnd($event)">
   <div class="header-container">
     <!-- Close button -->
-    <img src="/images/icons/noun-cross.png" alt="Close" class="close-icon" (click)="closeTimeline()">
+    <img src="/images/icons/noun-cross.png" alt="Close" class="close-icon" (touchend)="closeTimeline()" (click)="closeTimeline()">
     <!-- Page Title -->
     <h1 class="page-title">Discover the history of the clock.</h1>
     <!-- App Logo -->
@@ -16,12 +16,12 @@
       <!-- Container for Year and navigation arrows -->
       <div class="year-navigation-wrapper">
         @if (hasPreviousEvent) {
-          <img src="/images/icons/noun-arrow-left.png" alt="Previous" class="navigation-arrow left" (click)="previousEvent()">
+          <img src="/images/icons/noun-arrow-left.png" alt="Previous" class="navigation-arrow left" (touchend)="previousEvent()"  (click)="previousEvent()">
         }
       <!-- Year display -->
         <h1 class="year-display">{{ currentEvent.year }}</h1>
         @if (hasNextEvent) {
-          <img src="/images/icons/noun-arrow-right.png" alt="Next" class="navigation-arrow right" (click)="nextEvent()">
+          <img src="/images/icons/noun-arrow-right.png" alt="Next" class="navigation-arrow right" (touchend)="nextEvent()"  (click)="nextEvent()">
         }
       </div>
 

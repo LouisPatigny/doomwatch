@@ -1,0 +1,232 @@
+/* Settings Container */
+.settings-container {
+  padding: 20px;
+  color: white;
+  background-color: black;
+  font-family: 'Bahnschrift', sans-serif;
+  min-height: 90vh;
+}
+
+/* Title Styling */
+.settings-title {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+}
+
+/* Flexbox for Items */
+.setting-item {
+  display: flex;
+  flex-direction: column; /* Stack the label above the controls */
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  width: 100%;  /* Ensure the container takes full width */
+  flex-wrap: wrap;  /* Allow wrapping for larger elements */
+}
+
+/* Label Styling */
+.setting-label {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* Spacing for alarm sound section */
+.alarm-sound-section {
+  margin-top: 160px;  /* Add space above the Alarm Sound block */
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+}
+
+.setting-alarm-title {
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.alarm-sound-title {
+  font-size: 1.4rem;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: grey;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 25px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Audio Preview Container */
+.audio-preview-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Play button styles */
+.play-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.play-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Track name styling */
+.track-name {
+  margin-left: 10px;
+  flex-grow: 1;
+  font-size: 1.5rem;
+}
+
+/* Checkbox styling */
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+
+.checkbox-container input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkbox-container input:checked + .checkmark {
+  background-color: #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked + .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark */
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Close Icon */
+.close-icon {
+  padding: 10px;
+}
+
+/* Logo with growing animation */
+.logo {
+  position: absolute;
+  top: 87.5%;
+  left: 50%;
+  width: 100px;
+  height: auto;
+  animation: breath 5s linear infinite, fadeIn 600ms;
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+  .settings-title {
+    font-size: 3rem;
+  }
+
+  .setting-label {
+    font-size: 1.5rem;
+  }
+
+  .switch {
+    width: 60px;
+    height: 30px;
+  }
+
+  .slider:before {
+    height: 23px;
+    width: 23px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(30px);
+  }
+
+  .audio-preview-container input {
+    width: 30px;
+    height: 30px;
+  }
+}

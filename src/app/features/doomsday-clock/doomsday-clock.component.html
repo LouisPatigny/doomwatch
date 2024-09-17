@@ -10,10 +10,10 @@
 <div class="footer-container">
   <!-- Settings and About Icons (Bottom Right) -->
   <div class="footer-nav">
-    <img src="/images/icons/setting-icon-0.png" alt="Settings" class="footer-icon">
+    <img src="/images/icons/setting-icon-0.png" alt="Settings" class="footer-icon" (touchend)="openSettings()"  (click)="openSettings()">
     <!-- Info icon to open the 'About' page -->
-    <img src="/images/icons/about-icon-0.png" alt="About" class="footer-icon" (click)="openAbout()">
+    <img src="/images/icons/about-icon-0.png" alt="About" class="footer-icon" (touchend)="openAbout()"  (click)="openAbout()">
     <!-- Calendar icon to open the 'history timeline' page -->
-    <img src="/images/icons/calendar-icon.png" alt="Timeline" class="footer-icon" (click)="openTimeline()">
+    <img src="/images/icons/calendar-icon.png" alt="Timeline" class="footer-icon" (touchend)="openTimeline()"  (click)="openTimeline()">
   </div>
 </div>

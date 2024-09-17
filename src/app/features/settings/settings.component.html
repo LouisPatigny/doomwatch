@@ -1,0 +1,45 @@
+<!-- App Logo -->
+<img src="/images/icons/app-icon.png" alt="Doomwatch Logo" class="logo">
+<!-- Close button -->
+<img src="/images/icons/noun-cross.png" alt="Close" class="close-icon" (touchend)="closeSettings()" (click)="closeSettings()">
+
+<div class="settings-container">
+  <h1 class="settings-title">Settings</h1>
+
+  <!-- Enable Notifications -->
+  <div class="setting-item">
+    <label class="setting-label">Enable Notifications</label>
+    <label class="switch">
+      <input type="checkbox" [(ngModel)]="notificationsEnabled" (change)="onSettingsChange()">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <!-- Enable Alarms -->
+  <div class="setting-item">
+    <label class="setting-label">Enable Alarms</label>
+    <label class="switch">
+      <input type="checkbox" [(ngModel)]="midnightAlarmEnabled" (change)="onSettingsChange()">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <!-- Alarm Sounds Section -->
+  <div class="alarm-sound-section">
+    <div class="setting-alarm-title">
+    <label class="alarm-sound-title">Alarm Sound</label>
+    </div>
+    @for (sound of alarmSounds; track sound) {
+      <div class="audio-preview-container">
+        <button class="play-button" (click)="playPreview(sound)">
+          <img src="/images/icons/dark-light-mode-icon.png" alt="Play" class="play-icon">
+        </button>
+        <span class="track-name">{{ sound | titlecase }}</span>
+        <label class="checkbox-container">
+          <input type="radio" [checked]="selectedAlarmSound === sound" (change)="selectAlarmSound(sound)">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    }
+  </div>
+</div>

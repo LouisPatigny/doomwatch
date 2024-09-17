@@ -4,12 +4,14 @@ import { DoomsdaySplashComponent } from './features/doomsday-splash/doomsday-spl
 import { DoomsdayClockComponent } from './features/doomsday-clock/doomsday-clock.component';
 import {DoomsdayClockResolver} from "./core/resolvers/doomsday-clock.resolver";
 import {AboutComponent} from "./features/about/about.component";
+import { SettingsComponent } from "./features/settings/settings.component";
 
 const routes: Routes = [
   { path: '', component: DoomsdaySplashComponent },
   { path: 'clock', component: DoomsdayClockComponent, resolve: { clockData: DoomsdayClockResolver } },
   { path: 'history', loadChildren: () => import('./features/history/history.module').then(m => m.HistoryModule) },
   { path: 'about', component: AboutComponent },
+  { path: 'settings', component: SettingsComponent },
   { path: '**', redirectTo: '/clock' }, // Wildcard route for a 404 page or redirect
 ];
 

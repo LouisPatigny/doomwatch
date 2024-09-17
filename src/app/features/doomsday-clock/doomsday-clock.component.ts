@@ -38,19 +38,27 @@ export class DoomsdayClockComponent implements OnInit {
     });
   }
 
-  // Method to navigate to the history timeline
+  // Method to navigate to the 'history timeline' page
   openTimeline(): void {
     this.router.navigate(['/history']).then(
-      () => console.log('Navigated to the history timeline'),
-      (error) => console.error('Failed to navigate to history:', error)
+      () => console.log('Navigated to \"Timeline\"'),
+      (error) => console.error('Failed to navigate to \"Timeline\":', error)
     );
   }
 
-  // Method to navigate to the history timeline
+  // Method to navigate to the 'about' page
   openAbout(): void {
     this.router.navigate(['/about']).then(
-      () => console.log('Navigated to the history timeline'),
-      (error) => console.error('Failed to navigate to history:', error)
+      () => console.log('Navigated to \"About\"'),
+      (error) => console.error('Failed to navigate to \"About\":', error)
+    );
+  }
+
+  // Method to navigate to the 'settings' page
+  openSettings(): void {
+    this.router.navigate(['/settings']).then(
+      () => console.log('Navigated to \"Settings\"'),
+      (error) => console.error('Failed to navigate to \"Settings\":', error)
     );
   }
 }

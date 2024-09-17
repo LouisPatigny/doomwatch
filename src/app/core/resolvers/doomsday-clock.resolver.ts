@@ -1,17 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { DoomsdayService } from '../services/doomsday.service';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DoomsdayClockResolver implements Resolve<Observable<string>> {
 
-  constructor(private doomsdayService: DoomsdayService) {}
+  constructor(private doomsdayService: DoomsdayService) {
+  }
 
   resolve() {
-    // Fetch the clock data before navigating
-    return this.doomsdayService.getDoomsdayClock();
+    const cachedData = sessionStorage.getItem('clockData');
+    if (cachedData) {
+      return of(cachedData); // Use cached data if available
+    }
+
+    return this.doomsdayService.getDoomsdayClock().pipe(
+      tap(data => sessionStorage.setItem('clockData', data)) // Cache the data after fetching
+    );
   }
 }

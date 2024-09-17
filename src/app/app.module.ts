@@ -8,6 +8,8 @@ import { FormatTimePipe } from './shared/pipes/format-time.pipe';
 import { NgOptimizedImage } from "@angular/common";
 import { DoomsdaySplashComponent } from './features/doomsday-splash/doomsday-splash.component';
 import { AboutComponent } from './features/about/about.component';
+import { SettingsComponent } from './features/settings/settings.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { AboutComponent } from './features/about/about.component';
     FormatTimePipe,
     DoomsdaySplashComponent,
     AboutComponent,
+    SettingsComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgOptimizedImage
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgOptimizedImage,
+    FormsModule
+  ],
   providers: [
     provideHttpClient()  // HttpClientModule = Depreciated
   ],
