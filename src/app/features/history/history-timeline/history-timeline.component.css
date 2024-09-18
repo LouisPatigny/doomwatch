@@ -18,7 +18,7 @@
   position: absolute;
   top: 78%;
   left: 50%;
-  width: 100px;  /* Mobile-first default size */
+  width: 100px;
   height: auto;
   animation: breath 5s linear infinite, fadeIn 600ms;
 }
@@ -42,7 +42,7 @@
   justify-content: center;
   position: relative;
   width: 100%;
-  margin-top: 50px; /* Adjusted for dropdown and close button */
+  margin-top: 50px;
 }
 
 /* Year display */
@@ -76,7 +76,6 @@
 .history-timeline-container {
   text-align: center;
   overflow: hidden;
-  margin-bottom: 200px;
 }
 
 /* Midnight description */
@@ -88,11 +87,93 @@
 
 /* Event description */
 .description {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: left;
   padding: 0 20px 0 20px;
   margin: 10px 0;
   line-height: 36px;
+}
+
+/* Adjustments for smaller phones */
+@media (min-height: 600px) and (max-height: 741px) {
+
+  .history-timeline-wrapper {
+    padding-top: 20px;
+  }
+
+  .year-display {
+    font-size: 5rem;
+  }
+
+  .logo {
+    width: 80px;
+    top: 82%;
+    left: 50%;
+  }
+
+  .midnight-time {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 25px;
+  }
+
+  .navigation-arrow {
+    width: 35px;
+  }
+
+  .close-icon {
+    width: 40px;
+  }
+
+  .page-title {
+    font-size: 1.2rem;
+    top: -10px;
+  }
+}
+
+/* Adjustments for iPhone 12 Pro and similar */
+@media (min-height: 742px) and (max-height: 844px) {
+
+  .history-timeline-wrapper {
+    padding-top: 50px;
+  }
+
+  .year-display {
+    font-size: 6rem;
+  }
+
+  .logo {
+    width: 90px;
+    top: 80.5%;
+    left: 50%;
+  }
+
+  .midnight-time {
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    line-height: 25px;
+  }
+
+  .navigation-arrow {
+    width: 40px;
+  }
+
+  .close-icon {
+    width: 45px;
+  }
+
+  .page-title {
+    font-size: 1.2rem;
+    top: -10px;
+  }
 }
 
 /* Adjustments for tablets */

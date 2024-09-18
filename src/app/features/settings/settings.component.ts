@@ -89,6 +89,12 @@ export class SettingsComponent implements OnInit {
 
   // Close the 'Settings' page and navigate back to the 'clock' page
   closeSettings(): void {
+    // Stop the audio if it's currently playing
+    if (this.currentAudio) {
+      this.currentAudio.pause();
+      this.currentAudio.currentTime = 0;  // Reset its playback to the beginning
+    }
+    // Return to the 'Clock' page
     this.router.navigate(['/clock'], {
       state: { cached: true },  // Preserving state by marking it as cached
       replaceUrl: true,         // Replace the current URL to avoid adding to history

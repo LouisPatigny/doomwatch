@@ -9,7 +9,7 @@
   height: 100vh;
   background-color: black;
   position: relative;
-  gap: 20px; /* Adjust the gap as needed */
+  gap: 20px;
 }
 
 /* Logo with growing animation */
@@ -17,15 +17,15 @@
   position: absolute;
   top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.5);  /* Start at 50% size */
-  width: 200px;  /* Mobile-first default size */
+  transform: translate(-50%, -50%) scale(0.5);
+  width: 200px;
   height: auto;
-  animation: grow 600ms ease-out forwards;  /* Growing animation */
+  animation: grow 600ms ease-out forwards;
 }
 
 /* App name positioned below the logo */
 .app-name {
-  font-size: 3rem;  /* Mobile-first default size */
+  font-size: 3rem;
   color: white;
   margin-top: 100px;
   animation: fadeIn 600ms;

@@ -11,18 +11,18 @@
 .settings-title {
   text-align: center;
   font-size: 2.4rem;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 /* Flexbox for Items */
 .setting-item {
   display: flex;
-  flex-direction: column; /* Stack the label above the controls */
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 20px;
-  width: 100%;  /* Ensure the container takes full width */
-  flex-wrap: wrap;  /* Allow wrapping for larger elements */
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 /* Label Styling */
@@ -33,7 +33,7 @@
 
 /* Spacing for alarm sound section */
 .alarm-sound-section {
-  margin-top: 40px;  /* Add space above the Alarm Sound block */
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -163,7 +163,7 @@ input:checked + .slider:before {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(16px) translateX(-16px);
+  transform: translateY(6px) translateX(-16px);
   height: 25px;
   width: 25px;
   background-color: #eee;
@@ -211,32 +211,197 @@ input:checked + .slider:before {
   animation: breath 5s linear infinite, fadeIn 600ms;
 }
 
-/* Responsive Design */
+/* Adjustments for smaller phones */
+@media (min-height: 600px) and (max-height: 741px) {
+
+  .close-icon {
+    width: 40px;
+  }
+
+  .logo {
+    width: 80px;
+    top: 86%;
+    left: 50%;
+  }
+
+  .settings-title {
+    font-size: 1.6rem;
+  }
+
+  .setting-label {
+    font-size: 1.2rem;
+  }
+
+  .disclaimer {
+    font-size: 0.8rem;
+  }
+
+  .disclaimer-container {
+    margin-bottom: 20px;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+
+  .slider:before {
+    height: 16px;
+    width: 16px;
+    transform: translateX(-1px) translateY(2px);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(18px) translateY(2px);
+  }
+
+  .setting-alarm-title {
+    margin-bottom: 20px;
+  }
+
+  .alarm-sound-title {
+    font-size: 1.2rem;
+  }
+
+  .alarm-sound-section {
+    margin-top: 20px;
+  }
+
+  .play-icon {
+    width: 25px;
+    height: auto;
+  }
+
+  .track-name {
+    font-size: 0.9rem;
+  }
+
+  .checkmark {
+    width: 18px;
+    height: 18px;
+  }
+
+  .checkbox-container .checkmark:after {
+    left: 6px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+/* Adjustments for iPhone 12 Pro and similar */
+@media (min-height: 742px) and (max-height: 844px) {
+
+  .close-icon {
+    width: 45px;
+  }
+
+  .logo {
+    width: 90px;
+    top: 86.2%;
+    left: 50%;
+  }
+
+  .settings-title {
+    font-size: 2rem;
+  }
+
+  .setting-label {
+    font-size: 1.4rem;
+  }
+
+  .disclaimer {
+    font-size: 1rem;
+  }
+
+  .disclaimer-container {
+    margin-bottom: 30px;
+  }
+
+  .setting-alarm-title {
+    margin-bottom: 30px;
+  }
+
+  .alarm-sound-title {
+    font-size: 1.4rem;
+  }
+
+  .alarm-sound-section {
+    margin-top: 30px;
+  }
+}
+
+/* Adjustments for tablets */
 @media (min-width: 600px) {
   .settings-title {
     font-size: 3rem;
   }
 
+  .alarm-sound-title {
+    font-size: 2rem;
+  }
+
   .setting-label {
-    font-size: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .disclaimer {
+    font-size: 1.4rem;
   }
 
   .switch {
-    width: 60px;
-    height: 30px;
+    width: 90px;
+    height: 45px;
   }
 
   .slider:before {
-    height: 23px;
-    width: 23px;
+    height: 38px;
+    width: 38px;
   }
 
   input:checked + .slider:before {
-    transform: translateX(30px);
+    transform: translateX(45px);
   }
 
   .audio-preview-container input {
     width: 30px;
     height: 30px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .close-icon {
+    width: 100px;
+  }
+
+  .play-icon {
+    width: 80px;
+    height: auto;
+  }
+
+  .track-name {
+    font-size: 1.4rem;
+  }
+
+  .checkmark {
+    width: 45px;
+    height: 45px;
+  }
+
+  .checkbox-container .checkmark:after {
+    left: 16px;
+    top: 7px;
+    width: 10px;
+    height: 20px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    transform: rotate(45deg);
   }
 }
