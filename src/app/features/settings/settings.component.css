@@ -11,7 +11,7 @@
 .settings-title {
   text-align: center;
   font-size: 2.4rem;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 /* Flexbox for Items */
@@ -27,13 +27,13 @@
 
 /* Label Styling */
 .setting-label {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-bottom: 10px;
 }
 
 /* Spacing for alarm sound section */
 .alarm-sound-section {
-  margin-top: 160px;  /* Add space above the Alarm Sound block */
+  margin-top: 40px;  /* Add space above the Alarm Sound block */
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -46,7 +46,15 @@
 }
 
 .alarm-sound-title {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+}
+
+.disclaimer-container {
+  margin-bottom: 40px;
+}
+
+.disclaimer {
+  text-align: left;
 }
 
 /* Toggle Switch */
@@ -125,15 +133,16 @@ input:checked + .slider:before {
 }
 
 .play-icon {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
 }
 
 /* Track name styling */
 .track-name {
-  margin-left: 10px;
   flex-grow: 1;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  text-align: left;
+  transform: translateY(8px) translateX(10px);
 }
 
 /* Checkbox styling */
@@ -154,6 +163,7 @@ input:checked + .slider:before {
   position: absolute;
   top: 0;
   left: 0;
+  transform: translateY(16px) translateX(-16px);
   height: 25px;
   width: 25px;
   background-color: #eee;

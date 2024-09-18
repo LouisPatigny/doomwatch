@@ -8,7 +8,7 @@
 
   <!-- Enable Notifications -->
   <div class="setting-item">
-    <label class="setting-label">Enable Notifications</label>
+    <label class="setting-label">Enable Clock Notifications</label>
     <label class="switch">
       <input type="checkbox" [(ngModel)]="notificationsEnabled" (change)="onSettingsChange()">
       <span class="slider round"></span>
@@ -16,12 +16,22 @@
   </div>
 
   <!-- Enable Alarms -->
+  <div class="disclaimer-container">
+    <p class="disclaimer">Notifications are only sent when the Doomsday Clock time changes.</p>
+  </div>
+
+  <!-- Disclaimer on Notifications -->
   <div class="setting-item">
-    <label class="setting-label">Enable Alarms</label>
+    <label class="setting-label">Enable Doomsday Alarm</label>
     <label class="switch">
       <input type="checkbox" [(ngModel)]="midnightAlarmEnabled" (change)="onSettingsChange()">
       <span class="slider round"></span>
     </label>
+  </div>
+
+  <!-- Disclaimer on Alarms -->
+  <div class="disclaimer-container">
+    <p class="disclaimer">Alarm only triggers in-case the Doomsday Clock hits midnight.</p>
   </div>
 
   <!-- Alarm Sounds Section -->
@@ -32,7 +42,7 @@
     @for (sound of alarmSounds; track sound) {
       <div class="audio-preview-container">
         <button class="play-button" (click)="playPreview(sound)">
-          <img src="/images/icons/dark-light-mode-icon.png" alt="Play" class="play-icon">
+          <img src="/images/icons/playshittyicon.png" alt="Play" class="play-icon">
         </button>
         <span class="track-name">{{ sound | titlecase }}</span>
         <label class="checkbox-container">
