@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "940127269658",
+    "project_id": "doomwatch-1cc8c",
+    "storage_bucket": "doomwatch-1cc8c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940127269658:android:444ca64189aa7c3f0532a3",
+        "android_client_info": {
+          "package_name": "com.myapp.doomwatch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_IVz90FgvrEeEsMxTigcf8BnVjPJZA_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
