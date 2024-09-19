@@ -1,7 +1,8 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">doomwatch</string>
-    <string name="title_activity_main">doomwatch</string>
-    <string name="package_name">com.myapp.doomwatch</string>
-    <string name="custom_url_scheme">com.myapp.doomwatch</string>
+  <string name="app_name">doomwatch</string>
+  <string name="title_activity_main">doomwatch</string>
+  <string name="package_name">com.myapp.doomwatch</string>
+  <string name="custom_url_scheme">com.myapp.doomwatch</string>
+  <string name="default_notification_channel_id">default_channel</string>
 </resources>
