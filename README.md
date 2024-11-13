@@ -1,27 +1,70 @@
-# DoomsdayClockApp
+# Doomwatch - Technical Documentation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
+_A comprehensive technical guide for the Doomwatch mobile-first web app, developed in Angular.  
+This documentation is intended for developers maintaining or extending the app,  
+providing an in-depth understanding of its architecture, components, and workflows._
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Table of Contents
+- [Technologies Used](#technologies-used)
+- [Project Structure Summary](#project-structure-summary)
+- [Technical Details](#technical-details)
+- [Known Limitations](#known-limitations)
+- [Future Enhancements](#future-enhancements)
+- [Contact](#contact)
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies Used
 
-## Build
+- **Angular** (v18)
+- **Capacitor**
+- **Firebase** (for notifications)
+- **TypeScript**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technical Details
 
-## Running unit tests
+### `src/app/core/`
+Contains core services, such as:
+- **doomsday.service.ts**: Manages Doomsday Clock API interactions.
+- **history-timeline.service.ts**: Fetches historical events for the timeline.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### `src/app/features/`
+Components organized by feature, including:
+- **doomsday-clock.component.ts**: Displays the current Doomsday Clock time.
+- **doomsday-splash.component.ts**: Initial splash screen loading data.
+- **settings.component.ts**: Allows users to manage notifications and alarm sounds.
 
-## Running end-to-end tests
+### Notification and Alarm System
+The notification system, using Firebase and Capacitor, provides configurable alarms for significant Doomsday events. This is not fully operational, and notifications will not be functional in the current state.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## Known Limitations
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Incomplete Notification System**: The notification functionality for Doomsday events is only partially implemented.
+- **No Deployment**: Doomwatch is not deployed, as it was created as part of a training exercise rather than a production-ready app.
+- **Under Development**: Currently at about 90% completion. Remaining tasks are mostly minor but are necessary to reach full functionality.
+
+---
+
+## Future Enhancements
+
+The following features may be considered to enhance the project:
+- **Finalizing Notification System**: Complete and optimize notifications.
+- **Full Deployment**: Prepare the app for production deployment if intended for a larger user base.
+- **Polish and Testing**: Further polish UI/UX and perform extensive testing across devices.
+
+---
+
+## Contact
+
+For any questions or support, feel free to reach out:
+
+- **GitHub**: [LouisPatigny](https://github.com/LouisPatigny)
+- **Email**: patignylouis@gmail.com
+
+---
+
+Thank you for exploring Doomwatch! ⏰
